@@ -15,6 +15,7 @@
     "test": "atool-test-mocha ./src/**/*-test.js"
   },
   "dependencies": {
+    "antd": "^2.0.x",
     "dva": "^1.0.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
