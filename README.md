@@ -3,8 +3,10 @@ ts-dva
 
 TypeScript + dva + Antd
 
-Table of Contents[目录]
+
+Table of Contents
 -------
+[目录]
 
 * [Install[安装依赖]](#install)
 * [Usage[用法]](#usage)
