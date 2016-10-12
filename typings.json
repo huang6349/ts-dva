@@ -1,0 +1,9 @@
+{
+  "name": "ts-dva",
+  "globalDependencies": {
+    "dva": "registry:dt/dva#1.0.0+20160908051747",
+    "node": "registry:dt/node#6.0.0+20161010101523",
+    "react": "registry:dt/react#0.14.0+20161008064207",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
+  }
+}
