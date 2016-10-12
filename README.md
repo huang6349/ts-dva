@@ -11,8 +11,9 @@ Table of Contents[目录]
 * [Links[使用技术教程链接]](#links)
 * [License[开源协议]](#license)
 
-Install[安装依赖]
+Install
 -------
+[安装依赖]
 
 ```bash
 node >= 5.0.0
@@ -24,8 +25,9 @@ $ typings install
 $ npm install
 ```
 
-Usage[用法]
+Usage
 -------
+[用法]
 
 #### development[开发环境]
 
@@ -46,15 +48,17 @@ $ npm run test
 $ npm run build
 ```
 
-Links[使用技术教程链接]
+Links
 -------
+[使用技术教程链接]
 
 * [Microsoft/TypeScript](https://github.com/Microsoft/TypeScript)
 * [facebook/react](https://github.com/facebook/react)
 * [dvajs/dva](https://github.com/dvajs/dva)
 * [ant-design/ant-design](https://github.com/ant-design/ant-design)
 
-License[开源协议]
+License
 -------
+[开源协议]
 
 [MIT](https://tldrlegal.com/license/mit-license)
