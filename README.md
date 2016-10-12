@@ -13,7 +13,7 @@ Table of Contents
 
 * [Install[安装依赖]](#install)
 * [Usage[用法]](#usage)
-* [Links[使用技术教程链接]](#links)
+* [Links[教程链接]](#links)
 * [License[开源协议]](#license)
 
 Install
@@ -55,7 +55,7 @@ $ npm run build
 
 Links
 -------
-[使用技术教程链接]
+[教程链接]
 
 * [Microsoft/TypeScript](https://github.com/Microsoft/TypeScript)
 * [facebook/react](https://github.com/facebook/react)
