@@ -3,6 +3,14 @@ ts-dva
 
 TypeScript + dva + Antd
 
+Table of Contents[目录]
+-------
+
+* [Install[安装依赖]](#install)
+* [Usage[用法]](#usage)
+* [Links[使用技术教程链接]](#links)
+* [License[开源协议]](#license)
+
 Install[安装依赖]
 -------
 
@@ -19,10 +27,24 @@ $ npm install
 Usage[用法]
 -------
 
+#### development[开发环境]
+
 ```bash
 $ npm start
 ```
 访问：[http://127.0.0.1:8989](http://127.0.0.1:8989)
+
+#### test[测试环境]
+
+```bash
+$ npm run test
+```
+
+#### production[生产环境]
+
+```bash
+$ npm run build
+```
 
 Links[使用技术教程链接]
 -------
