@@ -1,14 +1,11 @@
 ts-dva
 =======
 
-TypeScript + dva + Antd
+* Language:TypeScript
 
+* Framework:dva
 
-开发语言：  TypeScript is a language for application-scale JavaScript. TypeScript adds optional types, classes, and modules to JavaScript. TypeScript supports tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the playground, and stay up to date via our blog and Twitter account.
-
-应用框架：  React and redux based, lightweight and elm-style framework.
-
-UI框架：  An enterprise-class UI design language and React-based implementation.
+* UI:ant.design
 
 Table of Contents
 -------
