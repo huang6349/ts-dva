@@ -2,7 +2,7 @@
   // 请访问 https://go.microsoft.com/fwlink/?LinkId=759670
   // 参阅有关 jsconfig.json 格式的文档
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
