@@ -12,7 +12,8 @@ const app = dva();
 //app.model(require('./models/example'));
 
 // 4. 注册程序路由
-app.router(require('./router'));
+import router from './router';
+app.router(router);
 
 // 5. 启动项目
 app.start('#root');
