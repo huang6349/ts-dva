@@ -1,5 +1,4 @@
 {
-  "name": "ts-dva",
   "globalDependencies": {
     "antd": "registry:dt/antd#0.12.10+20160326114918",
     "dva": "registry:dt/dva#1.0.0+20160908051747",
