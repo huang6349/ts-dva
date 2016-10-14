@@ -14,6 +14,7 @@ Table of Contents
 * [Install[安装依赖]](#install)
 * [Usage[用法]](#usage)
 * [Links[教程链接]](#links)
+* [Demo[项目演示]](#demo)
 * [License[开源协议]](#license)
 
 Install
@@ -51,6 +52,14 @@ $ npm run test
 ```bash
 $ npm run build
 ```
+
+Demo
+-------
+[项目演示]
+
+布局1
+
+![布局1](https://github.com/huang6349/Pictures/blob/master/ts-dva/2016-10-14_163215.png)
 
 Links
 -------
