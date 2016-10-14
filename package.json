@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "antd": "^2.0.x",
-    "dva": "^1.0.0",
+    "dva": "^1.1.x",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
