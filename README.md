@@ -24,8 +24,7 @@ Install
 node >= 5.0.0
 ```
 ```bash
-$ npm install -g typings
-$ npm install -g typescript
+$ npm install -g typescript typings
 $ typings install
 $ npm install
 ```
