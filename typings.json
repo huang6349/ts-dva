@@ -1,7 +1,5 @@
 {
   "globalDependencies": {
-    "antd": "registry:dt/antd#0.12.10+20160326114918",
-    "dva": "registry:dt/dva#1.0.0+20160908051747",
     "react": "registry:dt/react#0.14.0+20161008064207",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
   }
