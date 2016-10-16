@@ -15,6 +15,7 @@ Table of Contents
 * [Usage[用法]](#usage)
 * [Demo[项目演示]](#demo)
 * [Links[教程链接]](#links)
+* [Thank[致谢]](#thank)
 * [License[开源协议]](#license)
 
 Install
@@ -69,6 +70,12 @@ Links
 * [facebook/react](https://github.com/facebook/react)
 * [dvajs/dva](https://github.com/dvajs/dva)
 * [ant-design/ant-design](https://github.com/ant-design/ant-design)
+* [sorrycc/dva-boilerplate-typescript](https://github.com/sorrycc/dva-boilerplate-typescript)
+
+Thank
+-------
+[致谢]
+* [sorrycc](https://github.com/sorrycc)
 
 License
 -------
