@@ -8,7 +8,7 @@ import Sidebar from '../Views/Sidebar1';
 
 // 加载布局样式
 
-import styles from './style/MainLayout1.less';
+const styles = require('./style/MainLayout1.less');
 
 const MainLayout = ({ children, location }) => {
   return (
