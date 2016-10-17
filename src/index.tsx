@@ -1,6 +1,9 @@
 import dva from 'dva';
 import './index.html';
-import './index.less';
+
+// 加载公共样式
+
+require('./index.less')
 
 // 1. 初始化"dva"
 const app = dva();
@@ -12,8 +15,7 @@ const app = dva();
 //app.model(require('./models/example'));
 
 // 4. 注册程序路由
-import router from './router';
-app.router(router);
+app.router(require('./router'));
 
 // 5. 启动项目
 app.start('#root');
