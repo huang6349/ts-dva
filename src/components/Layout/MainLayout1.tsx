@@ -6,10 +6,11 @@ import { Breadcrumb } from 'antd';
 
 import Sidebar from '../Views/Sidebar1';
 
-// 加载布局样式
+// 加载组件样式
 
 const styles = require<any>('./style/MainLayout1.less');
 
+// 组件视图
 const MainLayout = ({ children, location }) => {
   return (
     <section className={styles['ant-layout-aside']}>
@@ -44,9 +45,11 @@ const MainLayout = ({ children, location }) => {
   );
 };
 
+// 验证传入参数
 MainLayout.prototype = {
   children: PropTypes.element.isRequired,
   location: PropTypes.object
 };
 
-export default MainLayout;
+// 导出组件
+export default connect()(MainLayout);
