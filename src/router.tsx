@@ -8,6 +8,7 @@ import MainLayout from './components/Layout/MainLayout1';
 // 加载程序页面
 
 import IndexPage from './routes/IndexPage.js';
+import TestTablePage from './routes/TestTable';
 
 // 导出路由配置
 
@@ -16,6 +17,7 @@ export default ({ history }) => {
     <Router history={history}>
       <Route component={MainLayout}>
         <Route path="/" component={IndexPage} />
+        <Route path="table" components={TestTablePage}></Route>
       </Route>
     </Router>
   );

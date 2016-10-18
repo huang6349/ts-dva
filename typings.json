@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "qs": "registry:dt/qs#6.2.0+20160707010053",
     "react": "registry:dt/react#0.14.0+20161008064207",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
   }

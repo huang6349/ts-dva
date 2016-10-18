@@ -12,7 +12,7 @@ const app = dva();
 //app.use({});
 
 // 3. 注册程序模型
-//app.model(require('./models/example'));
+app.model(require('./models/table'));
 
 // 4. 注册程序路由
 app.router(require('./router'));
