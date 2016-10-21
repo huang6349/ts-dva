@@ -1,38 +1,79 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'dva/router';
+import { connect } from 'dva';
 import { Menu, Icon } from 'antd';
+import { isEqual, isEmpty, uniq, last, filter } from 'underscore';
 
-const SubMenu = Menu['SubMenu'];
+import { RecursiveTree } from '../../utils/common.util';
+import { PREFIX_SUB, PREFIX_MENU, getSelectedKeys, getOpenKeys } from '../../services/sidebar';
 
-const Sidebar = ({ location }) => {
-  return (
-    <Menu mode="inline" theme="dark" defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']}>
-      <SubMenu key="sub1" title={<span><Icon type="user" />导航一</span>}>
-        <Menu.Item key="1">选项1</Menu.Item>
-        <Menu.Item key="2">
-          <Link to="table">测试表格</Link>
+function createMenu({ menus, title_name = 'name', icon_name = 'icon', current_name = 'id', url_name = 'url', child_name = 'childs' }) {
+  return menus.map((item) => {
+    let title: any = item[title_name];
+    if (item[icon_name]) {
+      title = <div><Icon type={item[icon_name]} />{title}</div>;
+    }
+    if (item[child_name] && item[child_name].length > 0) {
+      return (
+        <Menu.SubMenu key={`${PREFIX_SUB}-${item[current_name]}`} title={title}>
+          { createMenu({ menus: item[child_name] }) }
+        </Menu.SubMenu>
+      );
+    } else {
+      return (
+        <Menu.Item key={`${PREFIX_MENU}-${item[current_name]}`}>
+          <Link to={item[url_name]}>{title}</Link>
         </Menu.Item>
-        <Menu.Item key="3">选项3</Menu.Item>
-        <Menu.Item key="4">选项4</Menu.Item>
-      </SubMenu>
-      <SubMenu key="sub2" title={<span><Icon type="laptop" />导航二</span>}>
-        <Menu.Item key="5">选项5</Menu.Item>
-        <Menu.Item key="6">选项6</Menu.Item>
-        <Menu.Item key="7">选项7</Menu.Item>
-        <Menu.Item key="8">选项8</Menu.Item>
-      </SubMenu>
-      <SubMenu key="sub3" title={<span><Icon type="notification" />导航三</span>}>
-        <Menu.Item key="9">选项9</Menu.Item>
-        <Menu.Item key="10">选项10</Menu.Item>
-        <Menu.Item key="11">选项11</Menu.Item>
-        <Menu.Item key="12">选项12</Menu.Item>
-      </SubMenu>
+      );
+    }
+  });
+};
+
+const Sidebar = ({ dispatch, location, sidebar }) => {
+  let { menus, openKeys, selectedKeys } = sidebar;
+  let changeHandle = (item: string[]) => {
+    let newOpenKeys: string[] = new Array();
+    if (item && item.length > 0) {
+      const last_item = last(item);
+      menus.forEach(function (v, i) {
+        if (isEqual(`${PREFIX_SUB}-${v['id']}`, last_item)) {
+          newOpenKeys = Object.assign([], getOpenKeys({ menus, id: `${PREFIX_MENU}-${v['id']}` }));
+        }
+      });
+      newOpenKeys.push(last_item);
+    }
+    dispatch({
+      type: 'sidebar/UPDATE_SIDEBAR',
+      payload: {
+        openKeys: uniq(newOpenKeys),
+      }
+    });
+  };
+  let clickHandle = ({ item, key, keyPath }) => {
+    dispatch({
+      type: 'sidebar/UPDATE_SIDEBAR',
+      payload: {
+        openKeys: filter(keyPath, function (keys) {
+          return !isEqual(keys, key);
+        }),
+        selectedKeys: [key],
+      }
+    });
+  };
+  return (
+    <Menu mode="inline" theme="dark" onOpenChange={changeHandle} onClick={clickHandle} openKeys={openKeys} selectedKeys={selectedKeys}>
+      { createMenu({ menus: RecursiveTree({ data: menus }) }) }
     </Menu>
   );
 };
 
 Sidebar.prototype = {
-  location: PropTypes.object,
+  location: PropTypes.object.isRequired,
+  sidebar: PropTypes.array.isRequired,
 };
 
-export default Sidebar;
+function mapStateToProps({ sidebar }) {
+  return { sidebar };
+}
+
+export default connect(mapStateToProps)(Sidebar);
