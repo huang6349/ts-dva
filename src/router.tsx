@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import * as React from 'react';
 import { Router, Route } from 'dva/router';
 
 // 加载布局
@@ -12,7 +12,7 @@ import TestTablePage from './routes/TestTable';
 
 // 导出路由配置
 
-export default ({ history: any }) => {
+export default ({ history }) => {
   return (
     <Router history={ history }>
       <Route component={ MainLayout }>
