@@ -12,12 +12,12 @@ import TestTablePage from './routes/TestTable';
 
 // 导出路由配置
 
-export default ({ history }) => {
+export default ({ history: any }) => {
   return (
-    <Router history={history}>
-      <Route component={MainLayout}>
-        <Route path="/" component={IndexPage} />
-        <Route path="table" components={TestTablePage}></Route>
+    <Router history={ history }>
+      <Route component={ MainLayout }>
+        <Route path="/" component={ IndexPage } />
+        <Route path="table" components={ TestTablePage }></Route>
       </Route>
     </Router>
   );
