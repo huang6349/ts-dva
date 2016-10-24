@@ -20,9 +20,9 @@ interface MainLayoutProps {
 
 interface MainLayoutState { };
 
-// 构建组建
+// 构建组件
 
-class MainLayout extends React.Component<MainLayoutProps, MainLayoutState>{
+class MainLayout extends React.Component<MainLayoutProps, MainLayoutState> {
   render() {
     return (
       <section className={styles['ant-layout-aside']}>
