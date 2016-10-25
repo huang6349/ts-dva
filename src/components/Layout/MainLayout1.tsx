@@ -55,7 +55,7 @@ class MainLayout extends React.Component<MainLayoutProps, MainLayoutState> {
         <footer className={styles['ant-layout-footer']}>Ant Design 版权所有 © 2015 由蚂蚁金服体验技术部支持</footer>
       </section>
     );
-  }
+  };
 };
 
 // 导出组件
