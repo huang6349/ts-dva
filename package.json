@@ -17,6 +17,7 @@
   "dependencies": {
     "antd": "^2.1.x",
     "dva": "^1.1.x",
+    "moment": "^2.11.2",
     "qs": "^6.3.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
