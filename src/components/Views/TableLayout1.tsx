@@ -1,41 +1,119 @@
-import React, { PropTypes } from 'react';
+import * as React from 'react';
 import { connect } from 'dva';
-import { Table } from 'antd';
+import { routerRedux } from 'dva/router';
+import { Table, Menu, Dropdown, Icon } from 'antd';
 
-/**
- * 表格布局 1
- * 
- * columns 列描述数
- * total 数据总数
- * loading 加载状态
- * dataSource 数据
- * current 当前页数
- * onPageChange 当前页数发生改变执行的回调
- * pageSize 每页条数
- * onShowSizeChange 每页条数发生改变执行的回调
- */
-const TableLayout = ({ columns, total, loading, dataSource, current, onPageChange, pageSize, onPageSizeChange}) => {
+// 定义组件属性接口，验证属性参数类型
 
-  let tableProps = {
-    columns: columns,
-    dataSource: dataSource,
-    loading: loading,
-    rowKey: function (record) {
-      return record.id;
-    },
-    pagination: {
-      total: total || 0,
-      current: current || 1,
-      onChange: onPageChange,
-      showSizeChanger: true,
-      pageSize: pageSize || 10,
-      onShowSizeChange: onPageSizeChange,
-    },
-  };
-
-  return (
-    <Table { ...tableProps } size="default" />
-  );
+interface ViewProps {
+  dispatch: any;
+  location: any;
+  columns: Array<any>;
+  dataSource: Array<any>;
+  loading: Boolean;
+  key?: string;
+  total: Number;
+  current: Number;
+  pageSize: Number;
 };
 
-export default connect()(TableLayout);
+// 定义组件状态接口，验证状态参数类型
+
+interface ViewStates { };
+
+// 构建组件
+
+class View extends React.Component<ViewProps, ViewStates> {
+
+  constructor(props, context) {
+    super(props, context);
+  };
+
+  init() {
+    return {
+      columns: this.pushAction.bind(this)(),
+      dataSource: this.props.dataSource,
+      loading: this.props.loading,
+      rowKey: this.getRowKey.bind(this),
+      pagination: {
+        total: this.props.total || 0,
+        current: this.props.current || 1,
+        onChange: this.onPageChange.bind(this),
+        showSizeChanger: true,
+        pageSize: this.props.pageSize || 10,
+        onShowSizeChange: this.onShowSizeChange.bind(this),
+      },
+    };
+  };
+
+  pushAction() {
+    let columns = this.props.columns;
+    if (columns.length > 0) {
+      const menu = (
+        <Menu>
+          <Menu.Item key="0">
+            <a href="javascript:void(0);">删除该项</a>
+          </Menu.Item>
+          <Menu.Item key="1">
+            <a href="javascript:void(0);">修改该项</a>
+          </Menu.Item>
+          <Menu.Divider />
+          <Menu.Item key="3">
+            <a href="javascript:void(0);">查看该项</a>
+          </Menu.Item>
+        </Menu>
+      );
+      columns.push({
+        title: '操作',
+        key: 'action',
+        width: 180,
+        render: function (text, row, index) {
+          return (
+            <div>
+              <a href="javascript:void(0);">查看</a>
+              <span className="ml-10 mr-10">|</span>
+              <Dropdown overlay={menu} trigger={['click']}>
+                <a className="ant-dropdown-link" href="javascript:void(0);">
+                  更多 <Icon type="down" />
+                </a>
+              </Dropdown>
+            </div>
+          );
+        },
+      });
+    }
+    return columns;
+  };
+
+  getRowKey(record) {
+    return record[this.props.key] || record['id'];
+  }
+
+  onPageChange(page) {
+    if (this.props.location) {
+      this.props.dispatch(routerRedux.push({
+        pathname: this.props.location.pathname,
+        query: Object.assign({}, this.props.location.query, { page: page }),
+      }));
+    }
+  };
+
+  onShowSizeChange(page, limit) {
+    if (this.props.location) {
+      this.props.dispatch(routerRedux.push({
+        pathname: this.props.location.pathname,
+        query: Object.assign({}, this.props.location.query, { page: page, limit: limit }),
+      }));
+    }
+  };
+
+  render() {
+    return (
+      <Table { ...this.init.bind(this)() } size="default" />
+    );
+  };
+};
+
+// 导出组件
+
+export default View;

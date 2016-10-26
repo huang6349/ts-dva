@@ -6,60 +6,71 @@ import { connect } from 'dva';
 
 import TableLayout from '../components/Views/TableLayout1';
 
-const TestTable = ({ dispatch, location, table }) => {
+// 定义界面属性接口，验证属性参数类型
 
-  const { list, total, loading, current, pageSize  } = table;
+interface PageProps {
+  dispatch: any;
+  location: any;
+  table: any;
+};
 
-  let listProps = {
-    columns: [
-      {
-        title: '姓名',
-        dataIndex: 'name',
-        key: 'name',
-        width: 180,
-      },
-      {
-        title: '年龄',
-        dataIndex: 'age',
-        key: 'age',
-        width: 150,
-      },
-      {
-        title: '住址',
-        dataIndex: 'address',
-        key: 'address',
-      }
-    ],
-    total,
-    current,
-    pageSize,
-    loading,
-    dataSource: list,
-    onPageChange: function (page) {
-      dispatch(routerRedux.push({
-        pathname: location.pathname,
-        query: Object.assign({}, location.query, { page: page }),
-      }));
-    },
-    onPageSizeChange: function (page, limit) {
-      dispatch(routerRedux.push({
-        pathname: location.pathname,
-        query: Object.assign({}, location.query, { page: page, limit: limit }),
-      }));
-    },
+// 定义界面状态接口，验证状态参数类型
+
+interface PageStates { };
+
+// 构建界面
+
+class Page extends React.Component<PageProps, PageStates> {
+
+  constructor(props, context) {
+    super(props, context);
   };
 
-  return (
-    <TableLayout { ...listProps } />
-  );
+  render() {
+
+    const { list, total, loading, current, pageSize } = this.props.table;
+
+    const tableProps = {
+      dispatch: this.props.dispatch,
+      location: this.props.location,
+      columns: [
+        {
+          title: '姓名',
+          dataIndex: 'name',
+          key: 'name',
+          width: 180,
+        },
+        {
+          title: '年龄',
+          dataIndex: 'age',
+          key: 'age',
+          width: 150,
+        },
+        {
+          title: '住址',
+          dataIndex: 'address',
+          key: 'address',
+        },
+      ],
+      total: total,
+      current: current,
+      pageSize: pageSize,
+      loading: loading,
+      dataSource: list,
+    };
+
+    return (
+      <TableLayout { ...tableProps } ></TableLayout>
+    );
+  };
 };
 
-TestTable.prototype = {
-  table: PropTypes.object,
-};
+// 连接组件和模型
 
 function mapStateToProps({ table }) {
   return { table };
 }
 
-export default connect(mapStateToProps)(TestTable);
+// 导出界面
+
+export default connect(mapStateToProps)(Page);
