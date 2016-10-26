@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'dva';
 import { Breadcrumb } from 'antd';
 
 // 加载其它组件
@@ -13,7 +12,7 @@ const styles = require('./style/MainLayout1.less');
 // 定义组件属性接口，验证属性参数类型
 
 interface MainLayoutProps {
-  children: Element,
+  children: Element;
 };
 
 // 定义组件状态接口，验证状态参数类型
@@ -60,4 +59,4 @@ class MainLayout extends React.Component<MainLayoutProps, MainLayoutState> {
 
 // 导出组件
 
-export default connect()(MainLayout);
+export default MainLayout;
