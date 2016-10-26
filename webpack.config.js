@@ -1,17 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-
 module.exports = function (webpackConfig, env) {
   webpackConfig.babel.plugins.push('transform-runtime');
 
   // Support hmr
   if (env === 'development') {
     webpackConfig.devtool = '#eval';
-    webpackConfig.babel.plugins.push(['dva-hmr', {
-      entries: [
-        './src/index.js',
-      ],
-    }]);
+    webpackConfig.babel.plugins.push('dva-hmr');
   } else {
     webpackConfig.babel.plugins.push('dev-expression');
   }
