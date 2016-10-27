@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Breadcrumb } from 'antd';
+import { connect } from 'dva';
+import { Breadcrumb, Icon } from 'antd';
 
 // 加载其它组件
 
@@ -12,21 +13,34 @@ const styles = require('./style/MainLayout1.less');
 // 定义组件属性接口，验证属性参数类型
 
 interface MainLayoutProps {
+  dispatch: any;
   children: Element;
 };
 
 // 定义组件状态接口，验证状态参数类型
 
-interface MainLayoutState { };
+interface MainLayoutStates { };
 
 // 构建组件
 
-class MainLayout extends React.Component<MainLayoutProps, MainLayoutState> {
+class MainLayout extends React.Component<MainLayoutProps, MainLayoutStates> {
+
+  handleClick() {
+    this.props.dispatch({ type: 'login/LOGIN_OUT' });
+  };
+
   render() {
     return (
       <section className={styles['ant-layout-aside']}>
         {/* 顶部导航 开始 */}
-        <header className={styles['ant-layout-header']}>导航栏</header>
+        <header className={styles['ant-layout-header']}>
+          <div className="f-l">导航栏</div>
+          <div className="f-r text-r">
+            <Icon className="mr-5" type="question-circle-o" />
+            <span className="mr-20">帮助</span>
+            <a className="c-666" href="javascript:void(0);" onClick={ this.handleClick.bind(this) }>退出登录</a>
+          </div>
+        </header>
         {/* 顶部导航 结束 */}
         {/* 左侧菜单 开始 */}
         <nav className={styles['ant-layout-sider']}>
@@ -59,4 +73,4 @@ class MainLayout extends React.Component<MainLayoutProps, MainLayoutState> {
 
 // 导出组件
 
-export default MainLayout;
+export default connect()(MainLayout);
