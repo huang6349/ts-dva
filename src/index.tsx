@@ -3,7 +3,7 @@ import './index.html';
 
 // 加载公共样式
 
-require('./index.less')
+require('./index.less');
 
 // 1. 初始化"dva"
 const app = dva();

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import { routerRedux } from 'dva/router';
 import { connect } from 'dva';
+import { routerRedux } from 'dva/router';
 
 // 加载其它组件
 
