@@ -16,10 +16,14 @@ const checkStatus = (response) => {
 };
 
 const succeeded = (data) => {
-  if (parseInt(data.errno) === 0) {
-    return data['data'];
+  if (parseInt(data.errno) !== 0) {
+    message.error(data['errmsg']);
   }
-  message.error(data['errmsg']);
+  if (data) {
+    return data['data'];
+  } else {
+    return data;
+  }
 };
 
 const failed = (error) => {
