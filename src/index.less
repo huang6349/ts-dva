@@ -1,6 +1,760 @@
+//
+// 定义公共样式
+// --------------------------------------------------
+
+/*    *    开始定义     *    */
 
 :global {
   html, body, #root {
     height: 100%;
+  }
+  /* 定位 */
+  .pos-r {
+    /* 相对定位 */
+    position: relative;
+  }
+  .pos-a {
+    /* 绝对定位 */
+    position: absolute;
+  }
+  .pos-f {
+    /* 基于浏览器定位 */
+    position: fixed;
+  }
+  .pos-a.top, .pos-f.top {
+    /* 将元素定位在顶部 */
+    top: 0;
+    bottom: auto;
+  }
+  .pos-a.right, .pos-f.right {
+    /* 将元素定位在右侧 */
+    right: 0;
+    left: auto;
+  }
+  .pos-a.bottom, .pos-f.bottom {
+    /* 将元素定位在底部 */
+    bottom: 0;
+    top: auto;
+  }
+  .pos-a.left, .pos-f.left {
+    /* 将元素定位在左侧 */
+    left: 0;
+    right: auto;
+  }
+  /* 浮动 */
+  .l, .f-l {
+    /* 左浮动 */
+    float: left!important;
+    _display: inline;
+  }
+  .r, .f-r {
+    /* 右浮动 */
+    float: right!important;
+    _display: inline;
+  }
+  /* 文字处理 */
+  .text-l {
+    /* 文字对齐 - 左 */
+    text-align: left;
+  }
+  .text-r {
+    /* 文字对齐 - 右 */
+    text-align: right;
+  }
+  .text-c {
+    /* 文字对齐 - 居中 */
+    text-align: center;
+  }
+  .text-overflow {
+    /* 文字单行溢出省略号 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* 线条 */
+  .line {
+    font-size: 0px;
+    line-height: 0px;
+    border-top: 1px solid #eee;
+    float: none;
+  }
+  .line.line-dashed {
+    /* 虚线 */
+    border-top-style: dashed !important;
+  }
+  .line.line-color-gray {
+    /* 颜色 #ddd */
+    border-top-color: #ddd !important;
+  }
+  .line.line-color-ccc {
+    /* 颜色 #ccc */
+    border-color: #ccc !important;
+  }
+  /* 外距 */
+  .md-0 {
+    .make-distance-md(0px) !important;
+  }
+  .md-5 {
+    .make-distance-md(5px) !important;
+  }
+  .md-10 {
+    .make-distance-md(10px) !important;
+  }
+  .md-15 {
+    .make-distance-md(15px) !important;
+  }
+  .md-20 {
+    .make-distance-md(20px) !important;
+  }
+  .md-25 {
+    .make-distance-md(25px) !important;
+  }
+  .md-30 {
+    .make-distance-md(30px) !important;
+  }
+  .md-40 {
+    .make-distance-md(40px) !important;
+  }
+  .md-50 {
+    .make-distance-md(50px) !important;
+  }
+  /* 外距 - 上 */
+  .mt-0 {
+    .make-distance-mt(0px) !important;
+  }
+  .mt-5 {
+    .make-distance-mt(5px) !important;
+  }
+  .mt-10 {
+    .make-distance-mt(10px) !important;
+  }
+  .mt-15 {
+    .make-distance-mt(15px) !important;
+  }
+  .mt-20 {
+    .make-distance-mt(20px) !important;
+  }
+  .mt-25 {
+    .make-distance-mt(25px) !important;
+  }
+  .mt-30 {
+    .make-distance-mt(30px) !important;
+  }
+  .mt-40 {
+    .make-distance-mt(40px) !important;
+  }
+  .mt-50 {
+    .make-distance-mt(50px) !important;
+  }
+  /* 外距 - 右 */
+  .mr-0 {
+    .make-distance-mr(0px) !important;
+  }
+  .mr-5 {
+    .make-distance-mr(5px) !important;
+  }
+  .mr-10 {
+    .make-distance-mr(10px) !important;
+  }
+  .mr-15 {
+    .make-distance-mr(15px) !important;
+  }
+  .mr-20 {
+    .make-distance-mr(20px) !important;
+  }
+  .mr-25 {
+    .make-distance-mr(25px) !important;
+  }
+  .mr-30 {
+    .make-distance-mr(30px) !important;
+  }
+  .mr-40 {
+    .make-distance-mr(40px) !important;
+  }
+  .mr-50 {
+    .make-distance-mr(50px) !important;
+  }
+  /* 外距 - 下 */
+  .mb-0 {
+    .make-distance-mb(0px) !important;
+  }
+  .mb-5 {
+    .make-distance-mb(5px) !important;
+  }
+  .mb-10 {
+    .make-distance-mb(10px) !important;
+  }
+  .mb-15 {
+    .make-distance-mb(15px) !important;
+  }
+  .mb-20 {
+    .make-distance-mb(20px) !important;
+  }
+  .mb-25 {
+    .make-distance-mb(25px) !important;
+  }
+  .mb-30 {
+    .make-distance-mb(30px) !important;
+  }
+  .mb-40 {
+    .make-distance-mb(40px) !important;
+  }
+  .mb-50 {
+    .make-distance-mb(50px) !important;
+  }
+  /* 外距 - 左 */
+  .ml-0 {
+    .make-distance-ml(0px) !important;
+  }
+  .ml-5 {
+    .make-distance-ml(5px) !important;
+  }
+  .ml-10 {
+    .make-distance-ml(10px) !important;
+  }
+  .ml-15 {
+    .make-distance-ml(15px) !important;
+  }
+  .ml-20 {
+    .make-distance-ml(20px) !important;
+  }
+  .ml-25 {
+    .make-distance-ml(25px) !important;
+  }
+  .ml-30 {
+    .make-distance-ml(30px) !important;
+  }
+  .ml-40 {
+    .make-distance-ml(40px) !important;
+  }
+  .ml-50 {
+    .make-distance-ml(50px) !important;
+  }
+  /* 内距 */
+  .pd-0 {
+    .make-distance-pd(0px) !important;
+  }
+  .pd-5 {
+    .make-distance-pd(5px) !important;
+  }
+  .pd-10 {
+    .make-distance-pd(10px) !important;
+  }
+  .pd-15 {
+    .make-distance-pd(15px) !important;
+  }
+  .pd-20 {
+    .make-distance-pd(20px) !important;
+  }
+  .pd-25 {
+    .make-distance-pd(25px) !important;
+  }
+  .pd-30 {
+    .make-distance-pd(30px) !important;
+  }
+  .pd-40 {
+    .make-distance-pd(40px) !important;
+  }
+  .pd-50 {
+    .make-distance-pd(50px) !important;
+  }
+  /* 内距 - 上 */
+  .pt-0 {
+    .make-distance-pt(0px) !important;
+  }
+  .pt-5 {
+    .make-distance-pt(5px) !important;
+  }
+  .pt-10 {
+    .make-distance-pt(10px) !important;
+  }
+  .pt-15 {
+    .make-distance-pt(15px) !important;
+  }
+  .pt-20 {
+    .make-distance-pt(20px) !important;
+  }
+  .pt-25 {
+    .make-distance-pt(25px) !important;
+  }
+  .pt-30 {
+    .make-distance-pt(30px) !important;
+  }
+  .pt-40 {
+    .make-distance-pt(40px) !important;
+  }
+  .pt-50 {
+    .make-distance-pt(50px) !important;
+  }
+  /* 内距 - 右 */
+  .pr-0 {
+    .make-distance-pr(0px) !important;
+  }
+  .pr-5 {
+    .make-distance-pr(5px) !important;
+  }
+  .pr-10 {
+    .make-distance-pr(10px) !important;
+  }
+  .pr-15 {
+    .make-distance-pr(15px) !important;
+  }
+  .pr-20 {
+    .make-distance-pr(20px) !important;
+  }
+  .pr-25 {
+    .make-distance-pr(25px) !important;
+  }
+  .pr-30 {
+    .make-distance-pr(30px) !important;
+  }
+  .pr-40 {
+    .make-distance-pr(40px) !important;
+  }
+  .pr-50 {
+    .make-distance-pr(50px) !important;
+  }
+  /* 内距 - 下 */
+  .pb-0 {
+    .make-distance-pb(0px) !important;
+  }
+  .pb-5 {
+    .make-distance-pb(5px) !important;
+  }
+  .pb-10 {
+    .make-distance-pb(10px) !important;
+  }
+  .pb-15 {
+    .make-distance-pb(15px) !important;
+  }
+  .pb-20 {
+    .make-distance-pb(20px) !important;
+  }
+  .pb-25 {
+    .make-distance-pb(25px) !important;
+  }
+  .pb-30 {
+    .make-distance-pb(30px) !important;
+  }
+  .pb-40 {
+    .make-distance-pb(40px) !important;
+  }
+  .pb-50 {
+    .make-distance-pb(50px) !important;
+  }
+  /* 内距 - 左 */
+  .pl-0 {
+    .make-distance-pl(0px) !important;
+  }
+  .pl-5 {
+    .make-distance-pl(5px) !important;
+  }
+  .pl-10 {
+    .make-distance-pl(10px) !important;
+  }
+  .pl-15 {
+    .make-distance-pl(15px) !important;
+  }
+  .pl-20 {
+    .make-distance-pl(20px) !important;
+  }
+  .pl-25 {
+    .make-distance-pl(25px) !important;
+  }
+  .pl-30 {
+    .make-distance-pl(30px) !important;
+  }
+  .pl-40 {
+    .make-distance-pl(40px) !important;
+  }
+  .pl-50 {
+    .make-distance-pl(50px) !important;
+  }
+  /* 边框 */
+  .bk-d {
+    .make-bk-d(1px, #ddd) !important;
+  }
+  /* 边框 - 上 */
+  .bk-t {
+    .make-bk-t(1px, #ddd) !important;
+  }
+  /* 边框 - 右 */
+  .bk-r {
+    .make-bk-r(1px, #ddd) !important;
+  }
+  /* 边框 - 下 */
+  .bk-b {
+    .make-bk-b(1px, #ddd) !important;
+  }
+  /* 边框 -左 */
+  .bk-l {
+    .make-bk-l(1px, #ddd) !important;
+  }
+  /* 边框 -尺寸 */
+  .bk-d.size-2px, .bk-t.size-2px, .bk-r.size-2px, .bk-b.size-2px, .bk-b .size-2px {
+    /* 2个像素 */
+    border-width: 2px !important;
+  }
+  /* 边框 -颜色 */
+  .bk-d.color-gray, .bk-t.color-gray, .bk-r.color-gray, .bk-b.color-gray, .bk-b .color-gray {
+    /* 灰色边框 */
+    border-color: #eee !important;
+  }
+  /* css3阴影效果 */
+  .box-shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  .box-hover-shadow:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  /* css3圆角效果 */
+  .radius {
+    border-radius: 4px, all;
+  }
+  .size-MINI.radius {
+    /* 迷你圆角效果 */
+    border-radius: 2px, all;
+  }
+  .size-L.radius {
+    /* 大号圆角效果 */
+    border-radius: 5px, all;
+  }
+  .size-XL.radius {
+    /* 特大号圆角效果 */
+    border-radius: 6px, all;
+  }
+  .round.radius {
+    /* 圆形效果 */
+    overflow: hidden;
+    border-radius: 50%, all;
+  }
+  /* 行内分割竖线 */
+  .pipe {
+    margin: 0 5px;
+    color: #ccc;
+    font-size: 10px!important;
+  }
+  /* 文字尺寸 */
+  .f-12 {
+    font-size: 12px;
+  }
+  .f-14 {
+    font-size: 14px;
+  }
+  .f-16 {
+    font-size: 16px;
+  }
+  .f-18 {
+    font-size: 18px;
+  }
+  .f-20 {
+    font-size: 20px;
+  }
+  .f-24 {
+    font-size: 24px;
+  }
+  .f-26 {
+    font-size: 26px;
+  }
+  .f-28 {
+    font-size: 28px;
+  }
+  .f-30 {
+    font-size: 30px;
+  }
+  /* 文字行距 */
+  .lh-16 {
+    line-height: 16px;
+  }
+  .lh-18 {
+    line-height: 18px;
+  }
+  .lh-20 {
+    line-height: 20px;
+  }
+  .lh-22 {
+    line-height: 22px;
+  }
+  .lh-24 {
+    line-height: 24px;
+  }
+  .lh-26 {
+    line-height: 26px;
+  }
+  .lh-28 {
+    line-height: 28px;
+  }
+  .lh-30 {
+    line-height: 30px;
+  }
+  /* 文字颜色 */
+  @c-primary: #5a98de;
+  .c-primary {
+    /* 主色 */
+    .make-font-color(@c-primary);
+  }
+  a.c-primary {
+    /* 主色 - 超链接 */
+    .make-link-color(@c-primary);
+  }
+  @c-secondary: #555;
+  .c-secondary {
+    /* 次色 */
+    .make-font-color(@c-secondary);
+  }
+  a.c-secondary {
+    /* 次色 - 超链接 */
+    .make-link-color(@c-secondary);
+  }
+  @c-success: #5eb95e;
+  .c-success {
+    /* 强调色 - 成功 */
+    .make-font-color(@c-success);
+  }
+  a.c-success {
+    /* 强调色 - 成功 -超链接 */
+    .make-link-color(@c-success);
+  }
+  @c-danger: #dd514c;
+  .c-danger {
+    /* 强调色 - 危险 */
+    .make-font-color(@c-danger);
+  }
+  a.c-danger {
+    /* 强调色 - 危险 - 超链接 */
+    .make-link-color(@c-danger);
+  }
+  @c-warning: #f37b1d;
+  .c-warning {
+    /* 强调色 - 警告 */
+    .make-font-color(@c-warning);
+  }
+  a.c-warning {
+    /* 强调色 - 警告 - 超链接 */
+    .make-link-color(@c-warning);
+  }
+  @c-error: #c00;
+  .c-error {
+    /* 强调色 - 错误 */
+    .make-font-color(@c-error);
+  }
+  a.c-error {
+    /* 强调色 - 超链接 */
+    .make-link-color(@c-error);
+  }
+  @c-333: #333;
+  .c-333 {
+    /* 辅助色 - 浅黑 */
+    .make-font-color(@c-333);
+  }
+  a.c-333 {
+    /* 辅助色 - 浅黑 - 超链接 */
+    .make-link-color(@c-333);
+  }
+  @c-666: #666;
+  .c-666 {
+    /* 辅助色 - 灰色 */
+    .make-font-color(@c-666);
+  }
+  a.c-666 {
+    /* 辅助色 - 灰色 - 超链接 */
+    .make-link-color(@c-666);
+  }
+  @c-999: #999;
+  .c-999 {
+    /* 辅助色 - 灰色 */
+    .make-font-color(@c-999);
+  }
+  a.c-999 {
+    /* 辅助色 - 超链接 */
+    .make-link-color(@c-999);
+  }
+  @c-red: red;
+  .c-red {
+    /* 标准色 - 红色 */
+    .make-font-color(@c-red);
+  }
+  a.c-red {
+    /* 标准色 - 红色 - 超链接 */
+    .make-link-color(@c-red);
+  }
+  @c-green: green;
+  .c-green {
+    /* 标准色 - 绿色 */
+    .make-font-color(@c-green);
+  }
+  a.c-green {
+    /* 标准色 - 绿色 - 超链接 */
+    .make-link-color(@c-green);
+  }
+  @c-blue :blue;
+  .c-blue {
+    /* 标准色 - 蓝色 */
+    .make-font-color(@c-blue);
+  }
+  a.c-blue {
+    /* 标准色 - 蓝色 - 超链接 */
+    .make-link-color(@c-blue);
+  }
+  @c-white: white;
+  .c-white {
+    /* 标准色 - 白色 */
+    .make-font-color(@c-white);
+  }
+  a.c-white {
+    /* 标准色 - 白色 - 超链接 */
+    .make-link-color(@c-white);
+  }
+  @c-black: black;
+  .c-black {
+    /* 标准色 - 黑色 */
+    .make-font-color(@c-black);
+  }
+  a.c-black {
+    /* 标准色 - 黑色 - 超链接 */
+    .make-link-color(@c-black);
+  }
+  @c-orange: orange;
+  .c-orange {
+    /* 标准色 - 橙色 */
+    .make-font-color(@c-orange);
+  }
+  a.c-orange {
+    /* 标准色 - 橙色 - 超链接 */
+    .make-link-color(@c-orange);
+  }
+}
+
+//
+// 生成外距或内距
+// --------------------------------------------------
+
+/*    *    方法开始     *    */
+
+
+/* 外距 */
+
+.make-distance-md(@size: 0px) {
+  margin: @size;
+}
+
+
+/* 外距 - 上 */
+
+.make-distance-mt(@size: 0px) {
+  margin-top: @size;
+}
+
+
+/* 外距 - 右 */
+
+.make-distance-mr(@size: 0px) {
+  margin-right: @size;
+}
+
+
+/* 外距 - 下 */
+
+.make-distance-mb(@size: 0px) {
+  margin-bottom: @size;
+}
+
+
+/* 外距 - 左 */
+
+.make-distance-ml(@size: 0px) {
+  margin-left: @size;
+}
+
+
+/* 内距 */
+
+.make-distance-pd(@size: 0px) {
+  padding: @size;
+}
+
+
+/* 内距 - 上 */
+
+.make-distance-pt(@size: 0px) {
+  padding-top: @size;
+}
+
+
+/* 内距 - 右 */
+
+.make-distance-pr(@size: 0px) {
+  padding-right: @size;
+}
+
+
+/* 内距 - 下 */
+
+.make-distance-pb(@size: 0px) {
+  padding-bottom: @size;
+}
+
+
+/* 内距 - 左 */
+
+.make-distance-pl(@size: 0px) {
+  padding-left: @size;
+}
+
+//
+// 生成边框
+// --------------------------------------------------
+
+/*    *    方法开始     *    */
+
+
+/* 边框 */
+
+.make-bk-d(@size: 1px, @color: #ddd) {
+  border: solid @size @color;
+}
+
+
+/* 边框 - 上 */
+
+.make-bk-t(@size: 1px, @color: #ddd) {
+  border-top: solid @size @color;
+}
+
+
+/* 边框 - 右 */
+
+.make-bk-r(@size: 1px, @color: #ddd) {
+  border-right: solid @size @color;
+}
+
+
+/* 边框 - 下 */
+
+.make-bk-b(@size: 1px, @color: #ddd) {
+  border-bottom: solid @size @color;
+}
+
+
+/* 边框 -左 */
+
+.make-bk-l(@size: 1px, @color: #ddd) {
+  border-left: solid @size @color;
+}
+
+//
+// 生成文字颜色
+// --------------------------------------------------
+
+/*    *    方法开始     *    */
+
+.make-font-color(@color: #333) {
+  color: @color;
+}
+
+.make-link-color(@color: #333) {
+  color: @color;
+  &:hover, &:focus {
+    color: darken(@color, 10%);
   }
 }
