@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "antd": "^2.2.x",
-    "assets": "^2.1.0",
     "dva": "^1.1.x",
     "moment": "^2.11.2",
     "qs": "^6.3.0",
