@@ -15,7 +15,7 @@
     "test": "atool-test-mocha ./src/**/*-test.js"
   },
   "dependencies": {
-    "antd": "^2.1.x",
+    "antd": "^2.2.x",
     "dva": "^1.1.x",
     "moment": "^2.11.2",
     "qs": "^6.3.0",
