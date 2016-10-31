@@ -15,28 +15,28 @@
     "test": "atool-test-mocha ./src/**/*-test.js"
   },
   "dependencies": {
-    "antd": "^2.2.x",
-    "dva": "^1.1.x",
+    "antd": "^2.2.0",
+    "dva": "^1.1.0",
     "moment": "^2.11.2",
-    "qs": "^6.3.0",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "underscore": "^1.8.x"
+    "qs": "^6.2.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "atool-build": "^0.9.x",
+    "atool-build": "^0.9.0",
     "atool-test-mocha": "^0.1.5",
     "babel-plugin-dev-expression": "^0.2.1",
-    "babel-plugin-dva-hmr": "^0.2.x",
+    "babel-plugin-dva-hmr": "^0.2.0",
     "babel-plugin-import": "^1.0.x",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-runtime": "^6.9.2",
-    "dora": "^0.4.x",
-    "dora-plugin-proxy": "^0.8.x",
-    "dora-plugin-webpack": "^0.8.x",
-    "dora-plugin-webpack-hmr": "^0.2.x",
+    "dora": "^0.4.3",
+    "dora-plugin-proxy": "^0.8.4",
+    "dora-plugin-webpack": "^0.8.1",
+    "dora-plugin-webpack-hmr": "^0.2.1",
     "expect": "^1.20.2",
     "mockjs": "^1.0.0",
-    "redbox-react": "^1.3.x"
+    "redbox-react": "^1.3.2"
   }
 }
