@@ -63,29 +63,29 @@ class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
               <h1>欢迎使用"TS-DVA"</h1>
             </div>
             <div className={styles['ant-layout-content']}>
-              <Form horizontal onSubmit={ this.handleSubmit.bind(this) } style={{ marginTop: '24px' }}>
-                <Form.Item { ...formItemLayout } label="登陆帐号">
+              <Form horizontal onSubmit={this.handleSubmit.bind(this)} style={{ marginTop: '24px' }}>
+                <Form.Item { ...formItemLayout } label="登陆帐号" children="">
                   {
                     getFieldDecorator('account', {
                       initialValue: '',
                       rules: [
                         { min: 5, message: '帐号最少为5个字符长度' },
                       ]
-                    })(<Input type="text" placeholder="请输入帐(admin)" disabled={ this.props.loading } />)
+                    })(<Input type="text" placeholder="请输入帐(admin)" disabled={this.props.loading} />)
                   }
                 </Form.Item>
-                <Form.Item { ...formItemLayout } label="登陆密码">
+                <Form.Item { ...formItemLayout } label="登陆密码" children="">
                   {
                     getFieldDecorator('password', {
                       initialValue: '',
                       rules: [
                         { min: 5, message: '密码最少为5个字符长度' },
                       ]
-                    })(<Input type="password" placeholder="请输入密码(123456)" disabled={ this.props.loading } />)
+                    })(<Input type="password" placeholder="请输入密码(123456)" disabled={this.props.loading} />)
                   }
                 </Form.Item>
-                <Form.Item wrapperCol={{ span: 16, offset: 6 }}>
-                  <Button type="primary" htmlType="submit" loading={ this.props.loading }>登录</Button>
+                <Form.Item wrapperCol={{ span: 16, offset: 6 }} children="">
+                  <Button type="primary" htmlType="submit" loading={this.props.loading}>登录</Button>
                 </Form.Item>
               </Form>
             </div>
