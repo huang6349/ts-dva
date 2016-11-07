@@ -7,7 +7,7 @@
     "index": "./src/index.tsx"
   },
   "engines": {
-    "node": ">=5.0.0"
+    "node": ">=4.2.0"
   },
   "scripts": {
     "start": "dora --plugins \"proxy?watchDirs=./mock,webpack,webpack-hmr\"",
