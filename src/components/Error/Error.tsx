@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Icon } from 'antd';
 
 export interface ComponentProps {
-  message: string;
+  message?: string;
 };
 
 /**
@@ -10,7 +10,7 @@ export interface ComponentProps {
  */
 export default class Component extends React.Component<ComponentProps, any> {
   static propTypes = {
-    message: React.PropTypes.string.isRequired,
+    message: React.PropTypes.string,
   };
 
   render() {
