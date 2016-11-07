@@ -23,7 +23,7 @@ Install
 [安装依赖]
 
 ```bash
-node >= 5.0.0
+node >= 4.2.0
 ```
 ```bash
 $ npm install -g typescript typings
