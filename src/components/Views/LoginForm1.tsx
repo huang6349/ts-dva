@@ -63,8 +63,8 @@ class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
               <h1>欢迎使用"TS-DVA"</h1>
             </div>
             <div className={styles['ant-layout-content']}>
-              <Form horizontal onSubmit={this.handleSubmit.bind(this)} style={{ marginTop: '24px' }}>
-                <Form.Item { ...formItemLayout } label="登陆帐号" children="">
+              <Form horizontal onSubmit={this.handleSubmit.bind(this) } style={{ marginTop: '24px' }}>
+                <Form.Item { ...formItemLayout } label="登陆帐号">
                   {
                     getFieldDecorator('account', {
                       initialValue: '',
@@ -74,7 +74,7 @@ class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
                     })(<Input type="text" placeholder="请输入帐(admin)" disabled={this.props.loading} />)
                   }
                 </Form.Item>
-                <Form.Item { ...formItemLayout } label="登陆密码" children="">
+                <Form.Item { ...formItemLayout } label="登陆密码">
                   {
                     getFieldDecorator('password', {
                       initialValue: '',
