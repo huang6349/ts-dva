@@ -26,9 +26,13 @@ Install
 node >= 4.2.0
 ```
 ```bash
-$ npm install -g typescript typings
-$ typings install
+$ npm install -g typescript
 $ npm install
+```
+
+[可选操作]
+```bash
+$ npm install -g typings
 ```
 
 Usage
