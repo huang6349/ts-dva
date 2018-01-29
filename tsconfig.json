@@ -1,1 +1,15 @@
-{}
+{
+  "compilerOptions": {
+    "target": "es6",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules",
+    "bower_components",
+    "jspm_packages",
+    "tmp",
+    "temp"
+  ]
+}
