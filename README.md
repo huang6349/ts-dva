@@ -1,7 +1,7 @@
 ts-dva
 =======
 
-这个项目为本人刚学REACT和DVA时候编写的项目，不足之处请谅解。本人现在主要的精力在维护一个基于ANTD的组件库 [simple-materials-lib](https://github.com/huang6349/simple-materials-lib)
+这个项目为本人刚学REACT和DVA时候编写的项目，不足之处请谅解。本人现在主要的精力在维护一个基于ANTD的组件库 [simple-materials-lib](https://simple-materials-lib.netlify.com)
 
 * Language:TypeScript
 
